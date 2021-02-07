@@ -1,0 +1,18 @@
+body {
+    background: url(../test-page/images/burger-bg-1.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+.jumbotron {
+    background-color: gray;
+}
+
+.addBurg {
+    background-color: silver;
+}
+
+#addedBurgers, #removedBurgers {
+    background-color: gray;
+}
