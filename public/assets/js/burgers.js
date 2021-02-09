@@ -6,7 +6,7 @@ addBtn.addEventListener('click', (e) => {
     console.log(document.getElementById('brg').value);
     // All data comes from the input fields
     const newBurger = {
-        name: document.getElementById('brg').value.trim(),
+        burger_name: document.getElementById('brg').value.trim(),
     };
 
     // Send POST request using the fetch API
@@ -21,7 +21,8 @@ addBtn.addEventListener('click', (e) => {
         .then((response) => response.json())
         .then((data) => {
             console.log('Success in adding burger:', data);
-            alert(`Adding burger: ${newBurger.name}!`);
+            alert(`Adding burger: ${newBurger.burger_name}!`);
+            location.reload('/');
         })
         .catch((error) => {
             console.error('Error:', error);

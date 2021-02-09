@@ -11,6 +11,7 @@
                 <textarea class="form-control" id="brg" rows="1" name="name"></textarea>
             </div>
             <div class="container text-center">
+                <br>
                 <button class="btn btn-secondary" type="submit" id="addBurg">Add Burger</button>
             </div>
         </form>
@@ -25,10 +26,9 @@
                     <ul>
                         {{#each burgers}}
                         <li>
-                            <p>{{this.burger_name}}</p>
+                            <p>{{this.burger_name}} <button class="btn btn-secondary devBurg"
+                                    data-id="{{this.id}}">Devour!</button></p>
                         </li>
-
-                        <button class="btn btn-secondary devBurg" data-id="{{this.id}}">Devour!</button>
                         {{/each}}
                     </ul>
                 </div>
