@@ -42,7 +42,7 @@ devourBtns.forEach((button) => {
         const devourBurger = e.target.getAttribute('data-devoured');
 
         const newDevourState = {
-            devoured: devourBurger,
+            devoured: true,
         };
 
         console.log(id, 'burgers.js:48');
