@@ -16,6 +16,9 @@ const burger = {
 
     // updateOne: orm.updateOne(),
     updateOne(objColVals, condition, cb) {
+        console.log(objColVals, 'burger.js:19');
+        console.log(condition, 'burger.js:20');
+
         orm.updateOne('burgers', objColVals, condition, (res) => cb(res));
     },
 };

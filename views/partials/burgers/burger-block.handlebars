@@ -1,3 +1,4 @@
 <li>
-    <p>{{this.burger_name}}</p>
+    <p>{{this.burger_name}} {{#unless devoured}}<button class="btn btn-secondary devBurg" data-id="{{this.id}}"
+            data-devoured="{{devoured}}">Devour!</button>{{/unless}}</p>
 </li>

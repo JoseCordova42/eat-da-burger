@@ -45,6 +45,11 @@ devourBtns.forEach((button) => {
             devoured: devourBurger,
         };
 
+        console.log(id, 'burgers.js:48');
+        console.log(devourBurger, 'burgers.js:49');
+        console.log(newDevourState, 'burgers.js:50');
+        console.log(JSON.stringify(newDevourState), 'burgers.js:51');
+
         fetch(`/api/burgers/${id}`, {
             method: 'PUT',
             headers: {

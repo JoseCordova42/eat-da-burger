@@ -25,10 +25,9 @@
                     <h2 class="text-center">Burgers to be Eaten!</h2>
                     <ul>
                         {{#each burgers}}
-                        <li>
-                            <p>{{this.burger_name}} <button class="btn btn-secondary devBurg"
-                                    data-id="{{this.id}}" data-devoured="{{devoured}}">Devour!</button></p>
-                        </li>
+                        {{#unless devoured}}
+                        {{> burgers/burger-block devoured=false}}
+                        {{/unless}}
                         {{/each}}
                     </ul>
                 </div>
