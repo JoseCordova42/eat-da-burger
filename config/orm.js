@@ -44,18 +44,7 @@ const orm = {
         });
     },
 
-    // insertOne() {
-    //     connection.query();
-    // },
     insertOne(table, cols, vals, cb) {
-        // let queryString = `INSERT INTO ${table}`;
-
-        // queryString += ' (';
-        // queryString += cols.toString();
-        // queryString += ') ';
-        // queryString += 'VALUES (';
-        // queryString += printQuestionMarks(vals.length);
-        // queryString += ') ';
         let queryString = `INSERT INTO ${table} (${cols}) VALUES ('${vals}')`;
 
         connection.query(queryString, vals, (err, result) => {
@@ -67,13 +56,17 @@ const orm = {
         });
     },
 
-    // updateOne() {
-    //     connection.query();
-    // },
+    updateOne(table, objColVals, condition, cb) {
+        let queryString = `UPDATE ${table} SET ${objColVals} WHERE ${condition}`;
 
-    // deleteOne() {
-    //     connection.query();
-    // }
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
+    },
 }
 
 module.exports = orm;

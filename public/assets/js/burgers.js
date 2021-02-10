@@ -32,3 +32,33 @@ addBtn.addEventListener('click', (e) => {
     // Dump the content of the input boxes
     document.getElementById('brg').value = '';
 });
+
+const devourBtns = document.querySelectorAll('.devBurg');
+
+devourBtns.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = e.target.getAttribute('data-id');
+        const devourBurger = e.target.getAttribute('data-devoured');
+
+        const newDevourState = {
+            devoured: devourBurger,
+        };
+
+        fetch(`/api/burgers/${id}`, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newDevourState),
+        }).then((response) => {
+            if (response.ok) {
+                console.log(`burger is now ${devourBurger}`);
+                location.reload('/');
+            } else {
+                alert('Woops! Something went wrong!')
+            }
+        });
+    });
+});
